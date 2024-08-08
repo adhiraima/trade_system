@@ -1,0 +1,90 @@
+trading system
+
+company --
+id - pk
+name
+list(stocks)
+
+stock --
+id - shortname pk
+name
+volume -- number of shares
+price
+history log
+
+stock history log --
+id - stock id
+change - %age or float -/+
+timestamp
+price
+day
+month
+year
+
+trade --
+price
+type - buy/sell
+quantity
+timestamp
+time to live
+user - fk
+status - created(default)/pending/completed/cancelled/unmatched
+
+
+on completed trades -- create a transaction
+transaction -- 
+id - pk
+value
+list(trades)
+
+user --
+id - pk
+name
+username
+email
+phone
+portfolio
+
+portfolio --
+id - pk
+stock - fk
+quantity - float
+
+
+define a company
+
+
+will have a stock -- assiciation
+will have name , info , other few attributes
+
+define a stock - same as stock?
+will have price
+will have a number
+
+Where will the history be maintained ?? 
+
+define a stock history.. on a real time basis .. what kind of data structure to use for that?
+
+stock history can be saved datewise .. in json format
+stock history log 
+ up or down
+
+
+define a index - trading house like bse nse
+
+define a trade (buy and sell)
+selling price
+buying price 
+ttl - time to live or execute the trade
+
+
+create a user account
+user can have multiple stocks listed 
+user can trade in their stocks and new stocks
+
+create a transaction
+transaction can have multiple trades sell and buy
+
+
+
+create a service to buy
